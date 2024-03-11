@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    --text-color: #222;
+    --background-color: #fff;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  body.dark-theme {
+    --text-color: #fff;
+    --background-color: #222;
+}  
+
+body {
+    background: var(--background-color);
+    font: 150% sans-serif;  
+  }
+  
+  h1,
+  p, a, h3, span
+  {
+    color: var(--text-color);
+}

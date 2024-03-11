@@ -1,0 +1,49 @@
+  .name-container {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links {
+    display: flex;
+    padding: 10px;
+  }
+  
+  .nav-link {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 60px;
+    cursor: pointer;
+  }
+  
+  .nav-link:hover {
+    color: #007bff;
+  }
+  
+  .theme-switch-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    margin-top: 1rem;
+  }  
+
+  .nav-container {
+    margin: 0 auto;
+    top: 0;
+    text-align: center;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
