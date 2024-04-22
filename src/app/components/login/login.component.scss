@@ -1,0 +1,95 @@
+body {
+    
+}
+
+.login-container {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5); /* Fondo semitransparente */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 24px; /* Tamaño del título */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px; /* Tamaño de la etiqueta */
+    margin-bottom: 5px; /* Espacio inferior */
+  }
+  
+  input[type="email"],
+  input[type="password"],
+  button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 14px; /* Tamaño del texto */
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo semitransparente negro */
+    color: #333; /* Color del texto */
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .texto-gris {
+    text-align: center;
+    color: #000000; /* Color gris */
+    font-size: 12px; /* Tamaño del texto */
+    margin-top: 10px; /* Espacio superior */
+  }
+  
+  .parallax {
+    position: relative;
+    height: 1000px;
+    background: url('https://www.complotarquitectos.com/wp-content/uploads/2020/12/j03-arquitectura-cordoba-4_1920x1080.jpg') center/cover no-repeat; /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .span {
+    text-align: center;
+  }
+
+  .login-container span {
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none; /* Quita la subrayado del enlace */
+  }
+
+  .login-container span a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #18a3e4; /* Color verde */
+    text-decoration: none; /* Quita la subrayado del enlace */
+  }
+  
+  /* Estilos adicionales para el enlace al pasar el ratón por encima */
+  .login-container span a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el ratón por encima */
+  }

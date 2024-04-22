@@ -1,0 +1,114 @@
+/* Estilos generales */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2.5rem;
+    background-color: #F5F5DC; /* Beige claro o Crema */
+    min-height: 100vh;
+}
+  
+.form-content {
+    border-width: 2px;
+    border-color: #333333; /* Gris oscuro */
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #FFFFFF; /* Blanco */
+    border-radius: 1rem;
+}
+  
+.form-title {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    width: 28.125rem;
+    color: #000000; /* Negro */
+}
+  
+.form {
+    display: flex;
+    flex-direction: column;
+}
+  
+/* Etiquetas */
+.form-label {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #000000; /* Negro */
+}
+  
+/* Input */
+.form-input {
+    border-width: 1px;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.25rem;
+    color: #000000; /* Negro */
+}
+  
+.form-textarea {
+    border-width: 1px;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.25rem;
+    color: #000000; /* Negro */
+}
+  
+/* Validator */
+.error-message {
+    background-color: #F5F5DC; /* Beige claro o Crema */
+    color: #8B4513; /* Marrón oscuro */
+    border-color: #8B4513; /* Marrón oscuro */
+    margin-bottom: 1rem;
+    border-radius: 0.125rem;
+    font-size: 0.875rem;
+    width: fit-content;
+}
+  
+/* Checkbox */
+.form-checkbox {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 1rem;
+}
+  
+.form-checkbox-input {
+    font-size: 1rem;
+    color: #000000; /* Negro */
+}
+  
+/* Botón */
+.form-button {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.375rem;
+    background-color: #F5F5DC; /* Beige claro o Crema */
+    border-width: 1px;
+    border-color: #333333; /* Gris oscuro */
+    color: #000000; /* Negro */
+    font-weight: medium;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+}
+  
+.form-button:hover {
+    background-color: #333333; /* Gris oscuro */
+    color: #FFFFFF; /* Blanco */
+}

@@ -1,0 +1,50 @@
+<main class="form-container">
+    <div class="form-content">
+        <h1 class="form-title">DON'T FIND YOUR PRODUCT? ADD IT HERE!</h1>
+        <form class="form" [formGroup]="productForm">
+            <!--NAME INPUT-->
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" formControlName="name" class="form-input">
+            <!--VALIDATOR NAME-->
+            <div class="error-message" *ngIf="productForm.controls['name'].invalid && productForm.controls['name'].dirty">
+                <span *ngIf="productForm.controls['name'].errors?.['required']">❌The product name is required</span>
+                <span *ngIf="productForm.controls['name'].errors?.['minlength']">❌It must have at least 5 characters</span>
+            </div>
+
+            <!--PRICE INPUT-->
+            <label for="price" class="form-label">Price</label>
+            <input type="number" formControlName="price" class="form-input">
+            <!--VALIDATOR PRICE-->
+            <div class="error-message" *ngIf="productForm.controls['price'].invalid && productForm.controls['price'].dirty">
+                <span *ngIf="productForm.controls['price'].errors?.['required']">❌The product price is required</span>
+                <span *ngIf="productForm.controls['price'].errors?.['max']">❌It must be less than 750€</span>
+            </div>
+
+            <!--DESCRIPTION INPUT-->
+            <label for="desc" class="form-label">Description:</label>
+            <textarea rows="3" formControlName="desc" class="form-textarea"></textarea>
+            <!--VALIDATOR DESC-->
+            <div class="error-message" *ngIf="productForm.controls['desc'].invalid && productForm.controls['desc'].dirty">
+                <span *ngIf="productForm.controls['desc'].errors?.['required']">❌The product description is required</span>
+                <span *ngIf="productForm.controls['desc'].errors?.['maxlength']">❌Description must have a max length of 100</span>
+            </div>
+
+            <!--INPUT SALE-->
+            <div class="form-checkbox">
+                <label for="sale" class="form-label">On sale?</label>
+                <input type="checkbox" name="sale" class="form-checkbox-input">
+            </div>
+
+            <!--INPUT DATE-->
+            <label for="date" class="form-label">Date:</label>
+            <input type="date" formControlName="date" class="form-input">
+            <!--VALIDATOR DESC-->
+            <div class="error-message" *ngIf="productForm.controls['date'].invalid && productForm.controls['date'].dirty">
+                <span *ngIf="productForm.controls['date'].errors?.['required']">❌The product description is required</span>
+                <span *ngIf="productForm.controls['date'].errors?.['maxlength']">❌Description must have a max length of 100</span>
+            </div>
+
+            <button type="button" (click)="add()" class="form-button">Add Product</button>
+        </form>
+    </div>
+</main>

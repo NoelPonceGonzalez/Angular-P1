@@ -1,0 +1,26 @@
+import { Component } from '@angular/core';
+import { HeaderComponent } from '../header/header.component';
+import { CommonModule } from '@angular/common';
+import { DataService } from '../../service/data-service.service';
+import { RouterLink } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
+
+@Component({
+  selector: 'app-proyects',
+  standalone: true,
+  imports: [HeaderComponent, CommonModule,RouterLink, FooterComponent],
+  templateUrl: './proyects.component.html',
+  styleUrl: './proyects.component.scss'
+})
+export class ProyectsComponent {
+  products: any[] = [];
+
+  constructor(private dataService: DataService) { }
+
+  ngOnInit() {
+    this.dataService.getProducts().subscribe(products => {
+      console.log('Product added:', products);
+      this.products = products;
+    })
+  }
+}

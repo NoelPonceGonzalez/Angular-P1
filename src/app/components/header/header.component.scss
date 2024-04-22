@@ -47,3 +47,21 @@
     align-items: center;
     padding: 1rem;
   }
+
+  .btn-login {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 60px;
+    cursor: pointer;
+  }
+  
+  .btn-login:hover {
+    filter: brightness(80%);
+  }
+
+  .btn-login:hover {
+    color: #007bff;
+  }
+  
