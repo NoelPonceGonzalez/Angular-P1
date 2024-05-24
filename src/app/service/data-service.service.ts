@@ -1,19 +1,24 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Injectable, signal } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  constructor() { }
+  private baseUrl = 'http://127.0.0.1:5502';
+  productsSignal = signal<any[]>([]);
 
-  private products: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([]);
+  constructor(private http: HttpClient) {}
 
-  public sendProducts(products: any[]): void {
-    this.products.next(products);
+  addProduct(name: string, descritpion: string, price: string, date: string): Observable<any> {
+    const productData = { name, descritpion, price, date };
+    return this.http.post(`${this.baseUrl}/products/add`, productData);
   }
 
-  public getProducts(): Observable<any[]> {
-    return this.products;
+  getProducts() {
+    this.http.get<any>(`${this.baseUrl}/products/get`).subscribe((products) => {
+      this.productsSignal.set(products)
+    })
+    };
   }
-}

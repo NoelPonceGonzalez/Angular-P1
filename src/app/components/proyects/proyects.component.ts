@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
 import { DataService } from '../../service/data-service.service';
@@ -15,12 +15,12 @@ import { FooterComponent } from '../footer/footer.component';
 export class ProyectsComponent {
   products: any[] = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {}
 
   ngOnInit() {
-    this.dataService.getProducts().subscribe(products => {
-      console.log('Product added:', products);
-      this.products = products;
-    })
+    this.dataService.getProducts()
+    this.products = this.dataService.productsSignal();
+    console.log(this.products); // Ensure data is available here
+    console.log(this.products[0]); // Access the first element here
   }
 }

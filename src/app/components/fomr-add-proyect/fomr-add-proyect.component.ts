@@ -1,6 +1,8 @@
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { DataService } from '../../service/data-service.service';
 
 @Component({
@@ -12,23 +14,34 @@ import { DataService } from '../../service/data-service.service';
 })
 export class FomrAddProyectComponent {
   productForm: FormGroup;
-  isFormSubmitted: boolean = false;
 
-  products: any[] = [];
-
-  constructor(private dataService: DataService) {
-    this.productForm = new FormGroup({
-      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-      price: new FormControl('', [Validators.required, Validators.max(750)]),
-      desc: new FormControl('', [Validators.required, Validators.maxLength(50)]),
-      sale: new FormControl(''),
-      date: new FormControl('', [Validators.required]),
-    })
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private dataService: DataService
+  ) {
+    this.productForm = this.fb.group({
+      name: ['', [Validators.required]],
+      description: ['', Validators.required],
+      price: ['', Validators.required],
+      date: ['', Validators.required],
+    });
   }
-  ngOnInit() { }
 
-  add() {
-    this.dataService.sendProducts([this.productForm.value]);
-    this.productForm.reset();
+  onSubmit(): void {
+    if (this.productForm.valid) {
+      const { name, description, price, date } = this.productForm.value;
+      this.dataService.addProduct(name, description, price, date).subscribe(
+        (response: any) => {
+          console.log('Producto agregado:', response);
+          this.router.navigate(['/proyects']);
+        },
+        (error: any) => {
+          console.error('Error al agregar producto:', error);
+        }
+      );
+    } else {
+      this.productForm.markAllAsTouched();
+    }
   }
 }

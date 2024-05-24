@@ -24,10 +24,12 @@
         <h3>Rehabilitaciones</h3>
         <p>Damos vida a proyectos obsoletos dandoles la vuelta y convirtiendolos en todo lo que deseas.</p>
     </div>
-    <div class="image" *ngFor="let product of products; let i = index;">
-        <img src="https://okdiario.com/img/2018/03/13/como-calcular-porcentaje-de-error.jpg" alt="Imagen 4">
-        <h3>{{product.name}}</h3>
-        <p>{{product.desc}}</p>
-    </div>
+    @for(product of products; track $index) {
+        <div class="image">
+            <img src="https://okdiario.com/img/2018/03/13/como-calcular-porcentaje-de-error.jpg" alt="Imagen 4">
+            <h3>{{product.title}}</h3>
+            <p>{{product.descritpion}}</p>
+        </div>
+    }
   </div>
-  <app-footer />
+<app-footer />
